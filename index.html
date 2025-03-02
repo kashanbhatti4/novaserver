@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link Swiper's CSS -->
+    <link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Nova Studio | Home</title>
+        <script>
+          tailwind.config = {
+            theme: {
+              extend: {
+                colors: {
+                  primary: "#0AE448",
+                  heading: "#FFFCE1",
+                  paragraph: "#7C7C70",
+                },
+                boxShadow: {
+                  "3xl": "25px 16px 0px 0px #0E100F4D",
+                },
+              },
+            },
+          };
+        </script>
+
+        
+        <style>
+
+        .navbar-list {
+          transition: all 0.3s ease-in-out;
+        }
+        .navbar.active .navbar-list {
+          display: flex;
+        }
+        </style>
+    <script type="module" crossorigin src="/assets/index-BFepnTSG.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DYrqdWsM.css">
+  </head>
+  <body>
+    <div id="root"></div>
+     <!-- Swiper JS -->
+     
+     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+
+     <script>
+    window.onload = function () {
+    window.scrollTo(0, 0);
+};
+     </script>
+     
+
+
+
+     <!-- Initialize Swiper -->
+     <script>
+       var swiper = new Swiper(".mySwiper", {
+         slidesPerView: 2,
+         loop: true,
+         spaceBetween: 190,
+         centeredSlides: true,
+         navigation: {
+           nextEl: ".swiper-button-next",
+           prevEl: ".swiper-button-prev",
+         },
+         breakpoints: {
+           320: { 
+         slidesPerView: 1, 
+         spaceBetween: 10, 
+       },
+       768: { 
+         slidesPerView: 2,
+         spaceBetween: 100, 
+       },
+     
+      
+       1440: { 
+         slidesPerView: 2, 
+         spaceBetween: 190, 
+       },
+     },
+       });
+     </script>
+     <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const burger = document.querySelector("#menu-button");
+    const menu = document.querySelector("#menu");
+
+    if (burger && menu) {
+      burger.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const burger = document.querySelector(".navbar-burger");
+    const navbar = document.querySelector(".navbar");
+
+    if (burger && navbar) {
+      burger.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+      });
+    }
+  });
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    function updateClock() {
+      const now = new Date();
+
+      // Digital Clock - Local Time
+      let localHours = now.getHours();
+      let localMinutes = now.getMinutes();
+      let localAmPm = localHours >= 12 ? "PM" : "AM";
+
+      localHours = localHours % 12;
+      localHours = localHours ? localHours : 12; // Adjust 0 to 12
+      localMinutes = localMinutes < 10 ? "0" + localMinutes : localMinutes;
+
+      const localTimeString = `${localHours}:${localMinutes}${localAmPm}`;
+
+      const clockElement = document.getElementById("clock");
+      if (clockElement) {
+        clockElement.textContent = `${localTimeString} PST`;
+      }
+
+      // Analog Clock
+      const minuteDegree = (now.getMinutes() / 60) * 360;
+      const hourDegree =
+        ((now.getHours() % 12) / 12) * 360 + (now.getMinutes() / 60) * 30;
+
+      const minuteHand = document.getElementById("minute-hand");
+      const hourHand = document.getElementById("hour-hand");
+
+      if (minuteHand) {
+        minuteHand.style.transform = `rotate(${minuteDegree}deg)`;
+      }
+      if (hourHand) {
+        hourHand.style.transform = `rotate(${hourDegree}deg)`;
+      }
+    }
+
+    // Update clock every minute
+    setInterval(updateClock, 1000);
+
+    // Call function once to initialize the clock immediately
+    updateClock();
+  });
+</script>
+
+
+     <!-- <script>
+       function updateClock() {
+         const now = new Date();
+ 
+         // Digital Clock - Local Time
+         let localHours = now.getHours();
+         let localMinutes = now.getMinutes();
+         let localAmPm = localHours >= 12 ? "PM" : "AM";
+ 
+         localHours = localHours % 12;
+         localHours = localHours ? localHours : 12; // Adjust 0 to 12
+         localMinutes = localMinutes < 10 ? "0" + localMinutes : localMinutes;
+ 
+         const localTimeString = `${localHours}:${localMinutes}${localAmPm}`;
+         document.getElementById("clock").textContent = `${localTimeString} PST`;
+ 
+         // Analog Clock
+         const minuteDegree = (now.getMinutes() / 60) * 360;
+         const hourDegree =
+           ((now.getHours() % 12) / 12) * 360 + (now.getMinutes() / 60) * 30;
+ 
+         document.getElementById(
+           "minute-hand"
+         ).style.transform = `rotate(${minuteDegree}deg)`;
+         document.getElementById(
+           "hour-hand"
+         ).style.transform = `rotate(${hourDegree}deg)`;
+       }
+ 
+       // Update clock every minute
+       setInterval(updateClock, 1000);
+ 
+       // Call function once to initialize the clock immediately
+       updateClock();
+     </script> -->
+     <script
+       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+       integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+       crossorigin="anonymous"
+       referrerpolicy="no-referrer">
+     </script>
+     <script>
+       class Button {
+         constructor(buttonElement) {
+           this.block = buttonElement;
+           this.init();
+           this.initEvents();
+         }
+ 
+         init() {
+           const el = gsap.utils.selector(this.block);
+ 
+           this.DOM = {
+             button: this.block,
+             flair: el(".button__flair"),
+           };
+ 
+           this.xSet = gsap.quickSetter(this.DOM.flair, "xPercent");
+           this.ySet = gsap.quickSetter(this.DOM.flair, "yPercent");
+         }
+ 
+         getXY(e) {
+           const { left, top, width, height } =
+             this.DOM.button.getBoundingClientRect();
+ 
+           const xTransformer = gsap.utils.pipe(
+             gsap.utils.mapRange(0, width, 0, 100),
+             gsap.utils.clamp(0, 100)
+           );
+ 
+           const yTransformer = gsap.utils.pipe(
+             gsap.utils.mapRange(0, height, 0, 100),
+             gsap.utils.clamp(0, 100)
+           );
+ 
+           return {
+             x: xTransformer(e.clientX - left),
+             y: yTransformer(e.clientY - top),
+           };
+         }
+ 
+         initEvents() {
+           this.DOM.button.addEventListener("mouseenter", (e) => {
+             const { x, y } = this.getXY(e);
+ 
+             this.xSet(x);
+             this.ySet(y);
+ 
+             gsap.to(this.DOM.flair, {
+               scale: 1,
+               duration: 0.4,
+               ease: "power2.out",
+             });
+           });
+ 
+           this.DOM.button.addEventListener("mouseleave", (e) => {
+             const { x, y } = this.getXY(e);
+ 
+             gsap.killTweensOf(this.DOM.flair);
+ 
+             gsap.to(this.DOM.flair, {
+               xPercent: x > 90 ? x + 20 : x < 10 ? x - 20 : x,
+               yPercent: y > 90 ? y + 20 : y < 10 ? y - 20 : y,
+               scale: 0,
+               duration: 0.3,
+               ease: "power2.out",
+             });
+           });
+ 
+           this.DOM.button.addEventListener("mousemove", (e) => {
+             const { x, y } = this.getXY(e);
+ 
+             gsap.to(this.DOM.flair, {
+               xPercent: x,
+               yPercent: y,
+               duration: 0.4,
+               ease: "power2",
+             });
+           });
+         }
+       }
+ 
+       const buttonElements = document.querySelectorAll('[data-block="button"]');
+ 
+       buttonElements.forEach((buttonElement) => {
+         new Button(buttonElement);
+       });
+ 
+       gsap.to(".min-head", {
+         x: 500,
+         duration: 1,
+         delay: 1,
+         repeat: 1,
+         yoyo: true,
+       });
+       gsap.to(".min-head2", {
+         x: -850,
+         duration: 1,
+         delay: 1,
+         repeat: 1,
+         yoyo: true,
+       });
+     </script>
+
+
+
+
+
+
+
+
+<!-- <script>
+  useEffect(() => 
+  {
+    const handleScroll = () => {
+        blog.sections.forEach((section) => {
+            const sectionElement = document.getElementById(section.id);
+            const tocElement = document.getElementById(`toc-${section.id}`);
+
+            if (sectionElement) {
+                const rect = sectionElement.getBoundingClientRect();
+                if (rect.top >= 0 && rect.top <= 200) {
+                    tocElement.classList.add('active');
+                } else {
+                    tocElement.classList.remove('active');
+                }
+            }
+        });
+    };
+
+    const contentDiv = document.getElementById('main-content');
+    contentDiv.addEventListener('scroll', handleScroll);
+
+    return () => {
+        contentDiv.removeEventListener('scroll', handleScroll);
+    };
+},
+ [blog.sections]);
+
+</script> -->
+
+
+
+
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const handleScroll = () => {
+      blog.sections.forEach((section) => {
+        const sectionElement = document.getElementById(section.id);
+        const tocElement = document.getElementById(`toc-${section.id}`);
+
+        if (sectionElement) {
+          const rect = sectionElement.getBoundingClientRect();
+          if (rect.top >= 0 && rect.top <= 200) {
+            tocElement.classList.add('active');
+          } else {
+            tocElement.classList.remove('active');
+          }
+        }
+      });
+    };
+
+    const contentDiv = document.getElementById('main-content');
+    contentDiv.addEventListener('scroll', handleScroll);
+  });
+</script> -->
+
+  </body>
+</html>
